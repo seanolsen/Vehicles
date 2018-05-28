@@ -10,14 +10,14 @@ namespace app;
 
 use Fuel\Exception\FuelNameNotSetException;
 use Fuel\Exception\FuelNotFoundException;
-use Vehicle\Car;
-use Vehicle\Truck;
-use Vehicle\Boat;
-use Vehicle\Helicopter;
 use Fuel\Petrol\Petrol;
 use Fuel\Diesel\Diesel;
 use Fuel\Kerosene\Kerosene;
 use FuelStation\FuelStation;
+use Vehicle\Car;
+use Vehicle\Truck;
+use Vehicle\Boat;
+use Vehicle\Helicopter;
 use Vehicle\VehicleAbstract;
 
 class app
@@ -47,8 +47,6 @@ class app
                 $vehicle->move();
                 $vehicle->musicOn();
             } elseif ($vehicle instanceof Boat) {
-                print_r(get_class($vehicle));
-                print_r(Boat::class);
                 $vehicle->move();
                 $vehicle->swim();
             } elseif ($vehicle instanceof Helicopter) {
