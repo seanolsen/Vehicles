@@ -1,0 +1,15 @@
+{
+    "name": "max/vehicles",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Max Malyk",
+            "email": "sean.olsen987@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": { "": "src/" },
+        "classmap": ["app/app.php"]
+    }
+}
