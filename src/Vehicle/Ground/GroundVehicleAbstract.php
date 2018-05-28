@@ -14,14 +14,14 @@ abstract class GroundVehicleAbstract extends VehicleAbstract implements GroundVe
 {
     public function musicOn() : self
     {
-        echo 'la-la-la';
+        echo 'la-la-la' . PHP_EOL;
 
         return $this;
     }
 
     public function musicOff() : self
     {
-        echo 'tssss';
+        echo 'tssss' . PHP_EOL;
 
         return $this;
     }

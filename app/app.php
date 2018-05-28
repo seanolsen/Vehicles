@@ -27,7 +27,15 @@ class app
     public function run()
     {
         $this->loadVehicles();
-        $this->useVehicles();
+
+        /** @var VehicleAbstract $vehicle */
+        foreach($this->vehicles as $vehicle) {
+            $this->useVehicle($vehicle);
+            $this->refuelVehicle($vehicle);
+
+            // add linebreak
+            echo PHP_EOL;
+        }
     }
 
     private function loadVehicles()
@@ -40,29 +48,28 @@ class app
         ];
     }
 
-    private function useVehicles()
+    private function useVehicle(VehicleAbstract $vehicle)
     {
-        foreach($this->vehicles as $vehicle) {
-            if ($vehicle instanceof Car) {
-                $vehicle->move();
-                $vehicle->musicOn();
-            } elseif ($vehicle instanceof Boat) {
-                $vehicle->move();
-                $vehicle->swim();
-            } elseif ($vehicle instanceof Helicopter) {
-                $vehicle->takeOff();
-                $vehicle->fly();
-                $vehicle->landing();
-            } elseif ($vehicle instanceof Truck) {
-                $vehicle->move();
-                $vehicle->stop();
-                $vehicle->emptyLoads();
-            }
-
+        // this block was changed from switch/case to if/elseif
+        // to let your IDE highlight available methods for each
+        // instance of vehicles (thnx to instanceof in PhpStorm:))
+        if ($vehicle instanceof Car) {
+            $vehicle->move();
+            $vehicle->musicOn();
+        } elseif ($vehicle instanceof Boat) {
+            $vehicle->move();
+            $vehicle->swim();
+        } elseif ($vehicle instanceof Helicopter) {
+            $vehicle->takeOff();
+            $vehicle->fly();
+            $vehicle->landing();
+        } elseif ($vehicle instanceof Truck) {
+            $vehicle->move();
             $vehicle->stop();
-
-            $this->refuelVehicle($vehicle);
+            $vehicle->emptyLoads();
         }
+
+        $vehicle->stop();
     }
 
     private function refuelVehicle(VehicleAbstract $vehicle)

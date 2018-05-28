@@ -14,7 +14,7 @@ class Truck extends GroundVehicleAbstract
 {
     public function emptyLoads() : self
     {
-        echo 'its empty';
+        echo 'its empty' . PHP_EOL;
 
         return $this;
     }

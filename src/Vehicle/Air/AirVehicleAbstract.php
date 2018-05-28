@@ -14,21 +14,21 @@ abstract class AirVehicleAbstract extends VehicleAbstract implements AirVehicleI
 {
     public function fly() : self
     {
-        echo 'flying';
+        echo 'flying' . PHP_EOL;
 
         return $this;
     }
 
     public function landing() : self
     {
-        echo 'landing';
+        echo 'landing' . PHP_EOL;
 
         return $this;
     }
 
     public function takeOff() : self
     {
-        echo 'took off';
+        echo 'took off' . PHP_EOL;
 
         return $this;
     }

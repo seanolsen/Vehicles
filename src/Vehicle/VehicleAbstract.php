@@ -34,14 +34,14 @@ abstract class VehicleAbstract implements VehicleInterface
 
     public function refuel(FuelAbstract $fuel, float $volume) : self
     {
-        echo 'refuel ' . $fuel->getName() . ' - ' . $volume . 'L';
+        echo 'refuel ' . $fuel->getName() . ' - ' . $volume . 'L' . PHP_EOL;
 
         return $this;
     }
 
     public function stop() : self
     {
-        echo 'stopping';
+        echo 'stopping' . PHP_EOL;
 
         return $this;
     }
@@ -60,7 +60,7 @@ abstract class VehicleAbstract implements VehicleInterface
 
     public function move() : self
     {
-        echo 'moving';
+        echo 'moving' . PHP_EOL;
 
         return $this;
     }

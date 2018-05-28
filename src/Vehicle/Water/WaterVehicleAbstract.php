@@ -14,7 +14,7 @@ abstract class WaterVehicleAbstract extends VehicleAbstract implements WaterVehi
 {
     public function swim() : self
     {
-        echo 'swimming';
+        echo 'swimming' . PHP_EOL;
 
         return $this;
     }
